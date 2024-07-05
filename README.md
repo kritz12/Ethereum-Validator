@@ -56,3 +56,10 @@ krithik-project/
 ├── package-lock.json
 ├── package.json
 └── README.md
+
+## Navigate to the project directory:
+cd krithik-project
+## Install dependencies:
+npm install
+## Start the development server:
+npm start
