@@ -1,0 +1,86 @@
+.Welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  background-color: #046169;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 1px;
+}
+
+.Welcome h1 {
+  font-size: 3em;
+  margin-top: 170px;
+}
+
+.Welcome p {
+  font-size: 1.5em;
+  margin-top: 2px;
+}
+
+.Welcome .cssbuttons-io-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #fac079; 
+  color: rgb(14, 14, 14); 
+  font-family: inherit;
+  border-radius: 0.9em; 
+  border: none; 
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #8c8694;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-left: 1.2em;
+  padding-right: 3.3em;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.Welcome .cssbuttons-io-button:hover {
+  background-color: #27e643; 
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Welcome .cssbuttons-io-button .icon {
+  background: rgb(220, 215, 215);
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #808099;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.Welcome .cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.Welcome .cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #0c0c0c;
+}
+
+.Welcome .cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+  color: rgb(6, 6, 7);
+}
+
+.Welcome .cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+  color: black;
+}

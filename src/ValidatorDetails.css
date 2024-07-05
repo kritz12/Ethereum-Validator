@@ -1,0 +1,37 @@
+.validator-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .validator-details-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .validator-info {
+    margin-bottom: 10px;
+  }
+  
+  .validator-info label {
+    font-weight: bold;
+  }
+  
+  .validator-info p {
+    margin: 5px 0;
+  }
+  
+  .loading-message {
+    font-style: italic;
+    color: #666;
+  }
+  
+  .error-message {
+    color: #d32f2f;
+    font-weight: bold;
+  }
+  

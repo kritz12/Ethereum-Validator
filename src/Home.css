@@ -1,0 +1,36 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;    
+    position:static;
+    flex-direction: column;
+  }
+  
+  .image-container {
+    margin-bottom: 20px;
+    box-shadow: 10px;
+    border-radius: 10px;
+    
+  }
+  
+  .profile-image {
+    width: 350px; 
+    height: 200px;
+    border-radius:10px ;
+    box-shadow: 5px;
+  }
+  
+  .details-container {
+    text-align: center;
+  }
+  
+  .details-container h1 {
+    font-size: 2rem;
+  }
+  
+  .details-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
