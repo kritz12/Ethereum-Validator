@@ -1,71 +1,78 @@
+
 .content-container {
-    display: flex;
-    margin-top: 80px;
-    flex: 10;
-    margin-left: 0px;
-    flex-direction: column;
-    width: 100%;
-    align-items: center; 
-    overflow-y: auto; 
-    margin-top: 50px;
-  }
-  
-  .validator-container {
-    width: 90%; 
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #10898d;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    margin-top: 100px;
-    text-align: left; 
-  }
-  
-  h1 {
-    text-align: center;
-    color: #fbf6f6;
-  }
-  
-  .search-bar input{
-    display: flex;
-    justify-content: center;
-    height: 40px;
-    font-size: medium;
-    width: 200px;
-    margin-left: 110px;
-    margin-bottom: 10px;
-    line-height: 26px;
-    border: 2px solid transparent;
-    border-bottom-color: #ffffff;
-    padding: .3rem 0;
-    outline: none;
-    background-color: transparent;
-   color: #0f1012;
-    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-  
-  .search-bar input:focus, input:hover {
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 3rem;
-    color: #0f1012;
-    border-color: #7a9cc6;
-   }
+  display: flex;
+  margin-top: 80px;
+  flex: 10;
+  margin-left: 0px;
+  flex-direction: column;
+  width: 100%;
+  align-items: center; 
+  overflow-y: auto; 
+  margin-top: 50px;
+}
+
+.validator-container {
+  width: 100%; 
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #10898d;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  margin-top: 100px;
    
-   .search-bar input::placeholder {
-    color: #0d0c0c;
-   }
-   
-   .search-bar input:focus::placeholder {
-    opacity: 0;
-    transition: opacity .3s;
-   }
-   
-  
-  .search-bar button {
-    width: 120px;
-    margin-left: 160px;
+}
+
+h1 {
+  text-align: center;
+  color: #fbf6f6;
+}
+.help-paragraph p{
+  margin-top: 10px;
+  max-width: 600px;
+  align-items:center ;  
+  text-align: center;
+}
+
+.search-bar input {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  font-size: medium;
+  width: 310px;
+  margin-left: 110px;
+  margin-bottom: 10px;
+  line-height: 26px;
+  border: 2px solid transparent;
+  border-bottom-color: #ffffff;
+  padding: .3rem 0;
+  outline: none;
+  background-color: transparent;
+  color: #0f1012;
+  transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.search-bar input:focus, input:hover {
+  outline: none;
+  padding: .2rem 1rem;
+  border-radius: 3rem;
+  color: #0f1012;
+  border-color: #7a9cc6;
+}
+
+.search-bar input::placeholder {
+  color: #0d0c0c;
+}
+
+.search-bar input:focus::placeholder {
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.search-bar button {
+  width: 120px;
+  margin-left: 160px;
   height: 50px;
   border: 3px solid #0f1012;
   border-radius: 40px;
@@ -75,113 +82,65 @@
   font-size: 1.0em;
   font-weight: 550;
   font-family: 'Montserrat', sans-serif;   
-  }
-  
-  .search-bar button:hover {
-    background: #1657d0;
+}
+
+.search-bar button:hover {
+  background: #1657d0;
   color: white;
   font-size: 1.2em;
+}
 
-  }
- 
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
-  
-  .validator-details {
-    display:inline;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .validator-info {
-    width: 100%; 
-    margin-bottom: 20px; 
-  }
-  
-  .validator-attestations {
-    width: 100%; 
-  }
-  
-  h2 {
-    color: #282727;
-    border-bottom: 2px solid #000000;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .validator-info p,
-  .validator-attestations p {
-    margin: 5px 0;
-  }
-  
-  .attestation {
-    background-color: #046169;
-    padding: 10px;
-    width: 80%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  .attestation hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 10px 0;
-  }
-  .button1 {
-    
-    background-color: #4CAF50; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s; 
-  
-    
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .button1:hover {
-    background-color: #357edd; 
-  }
-  
-  .validator-attestations {
-    width: 100%;
-    overflow-y: auto; 
-    max-height: 300px; 
-  }
-  
-  
-  .validator-attestations table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .validator-attestations th, .validator-attestations td {
-    padding: 8px;
-    text-align: center;
-    border: 1px solid #928c8f;
-  }
-  
-  .validator-attestations th {
-    position: sticky;
-    top: 0;
-    background-color: #4b7169;
-  }
-  
-  .validator-attestations td:first-child {
-    position: sticky;
-    left: 0;
-    background-color:#4b7169;
-  }
-  
+.error-message {
+  color: rgb(192, 59, 59);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.validator-details {
+  display: inline;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.validator-info {
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
+.validator-attestations {
+  width: 100%; 
+}
+
+h2 {
+  color: #282727;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.validator-info p,
+.validator-attestations p {
+  margin: 5px 0;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+
+.info-button {
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  display: block;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+.info-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
