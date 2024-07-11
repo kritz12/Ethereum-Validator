@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './Validator.css'; 
+import React, { useState, useEffect, useCallback } from 'react';
+import './Validator.css';
 
 function Validator() {
   const [validatorId, setValidatorId] = useState('');
@@ -7,7 +7,20 @@ function Validator() {
   const [validatorAttestations, setValidatorAttestations] = useState([]);
   const [error, setError] = useState('');
 
-  const handleSearch = async () => {
+  const isNumeric = (str) => /^\d+$/.test(str);
+  const isValidPubKey = (str) => /^(0x)?[0-9a-fA-F]{96}$/.test(str);
+
+  const handleSearch = useCallback(async () => {
+    if (validatorId.trim() === '') {
+      setError(' *Please input values to search.*');
+      return;
+    }
+
+    if (!isNumeric(validatorId) && !isValidPubKey(validatorId)) {
+      setError('*Input must be a valid Validator Index (numeric) or Public Key.*');
+      return;
+    }
+
     setError('');
     setValidatorInfo(null);
     setValidatorAttestations([]);
@@ -29,8 +42,14 @@ function Validator() {
     } catch (err) {
       setError(err.message);
     }
+  }, [validatorId]);
+
+  const handleInputChange = (e) => {
+    setValidatorId(e.target.value);
+    setValidatorInfo(null);
+    setValidatorAttestations([]);
+    setError('');
   };
-  
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -38,29 +57,35 @@ function Validator() {
         handleSearch();
       }
     };
-  
+
     document.addEventListener('keydown', handleKeyPress);
-  
+
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  });
-  
+  }, [handleSearch]);
+
   return (
     <div className="validator-container">
-      <h1>Validator Search/Input Form</h1>
+      <h1>Validator Search</h1>
+      <p className="help-paragraph">
+        This input field is used to fetch information about Ethereum Validator details.
+       It only accepts numerical inputs for Validator Index or a valid Public Key
+        The validator information is retrieved from the Beaconcha.in API.
+      </p>
       <div className="search-bar">
         <input
           type="text"
           value={validatorId}
-          onChange={(e) => setValidatorId(e.target.value)}
-          placeholder="Enter Validator ID"
+          onChange={handleInputChange}
+          placeholder="Enter Validator ID or PubKey"
         />
         <button className="button" onClick={handleSearch}>Search</button>
       </div>
+      
       {error && <p className="error-message">{error}</p>}
       <div className="validator-details">
-        {validatorInfo && (
+        {validatorInfo && !error && (
           <div className="validator-info">
             <h2>Validator Info</h2>
             <p><strong>Activation Eligibility Epoch:</strong> {validatorInfo.activationeligibilityepoch}</p>
@@ -79,14 +104,14 @@ function Validator() {
             <p><strong>Total Withdrawals:</strong> {validatorInfo.total_withdrawals}</p>
           </div>
         )}
-        {validatorAttestations.length > 0 && (
+        {validatorAttestations.length > 0 && !error && (
           <div className="validator-attestations">
             <h2>Attestations</h2>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>SL No</th> {/* Serial number column */}
+                    <th>SL No</th>
                     <th>Attester Slot</th>
                     <th>Committee Index</th>
                     <th>Epoch</th>
@@ -100,7 +125,7 @@ function Validator() {
                 <tbody>
                   {validatorAttestations.map((attestation, index) => (
                     <tr key={index}>
-                      <td>{index + 1}</td> {/* Serial number starts from 1 */}
+                      <td>{index + 1}</td>
                       <td>{attestation.attesterslot}</td>
                       <td>{attestation.committeeindex}</td>
                       <td>{attestation.epoch}</td>
