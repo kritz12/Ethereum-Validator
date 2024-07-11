@@ -81,13 +81,22 @@ function TopValidators() {
   };
 
   const handleSearchChange = (e) => {
-    setSearchInput(e.target.value);
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) { // Only allow numeric input
+      setSearchInput(value);
+      if (value === '') {
+        setSearchedValidator(null); // Reset searched validator if input is empty
+        setError(null);
+      }
+    }
   };
 
-  const handleSearchClick = () => {
+  const handleSearch = () => {
     const indexOrRank = parseInt(searchInput, 10);
-    if (isNaN(indexOrRank)) return;
-
+    if (isNaN(indexOrRank) || indexOrRank > 100 || indexOrRank < 1) {
+      setError('Please enter a valid index or rank number (1-100)');
+      return;
+    }
     const validator = validators.find(
       (v, idx) => v.validatorindex === indexOrRank || idx + 1 === indexOrRank
     );
@@ -97,6 +106,12 @@ function TopValidators() {
     } else {
       setSearchedValidator(null);
       setError('Validator not found');
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
   };
 
@@ -115,15 +130,16 @@ function TopValidators() {
           type="text"
           value={searchInput}
           onChange={handleSearchChange}
+          onKeyPress={handleKeyPress}
           placeholder="Enter index or rank number"
         />
-        <button onClick={handleSearchClick}>Search</button>
+        <button onClick={handleSearch}>Search</button>
         <button onClick={handleClearClick}>Clear</button>
       </div>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p>{error}</p>
+        <p className="error-message">{error}</p>
       ) : (
         <>
           <table>
