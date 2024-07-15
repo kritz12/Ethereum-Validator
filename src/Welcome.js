@@ -12,7 +12,7 @@ function Welcome() {
 
   return (
     <div className="Welcome">
-      <h1>Welcome to My React App</h1>
+      <h1>Ethereum Validator Tracker</h1>
       <p>This application tracks Ethereum validators using beaconcha.in API.</p>
       <button className="cssbuttons-io-button" onClick={handleStart}>
         Get Started
