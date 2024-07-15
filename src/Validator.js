@@ -68,9 +68,8 @@ function Validator() {
   return (
     <div className="validator-container">
       <h1>Validator Search</h1>
-      <p className="help-paragraph">
-        This input field is used to fetch information about Ethereum Validator details.
-       It only accepts numerical inputs for Validator Index or a valid Public Key
+      <p className="paragraph">
+        This input field only accepts numerical inputs for Validator Index or a valid Public Key
         The validator information is retrieved from the Beaconcha.in API.
       </p>
       <div className="search-bar">
