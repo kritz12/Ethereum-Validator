@@ -1,3 +1,4 @@
+/* App.css */
 body, html {
   margin: 0;
   padding: 0;
@@ -5,23 +6,19 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #046169;
-  color: white;
-  
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1200px; 
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;/* Prevents scrolling */
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 
 .sidebar {
-  background-color: #f0f0f0;
+  background-color: rgba(237, 191, 191, 0.8); /* Sidebar with some transparency */
   width: 250px;
   padding: 20px;
   position: fixed;
@@ -29,33 +26,44 @@ body, html {
   left: 0;
   height: 100%;
   overflow-y: auto; 
-}
-
-.sidebar-container {
-  height: 100%;
-}
-
-.sidebar-links {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar-links li {
-  margin-bottom: 10px;
-}
-
-.sidebar-links a {
-  color: #333;
-  text-decoration: none;
-  font-size: 1rem;
+  z-index: 2; /* Ensures the sidebar content is above the overlay */
 }
 
 .main-content {
-  padding-top: 60px;
-  margin-left: 250px;
-  padding: 20px;
   flex: 1;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-left: 190px;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('wp2302899-ethereum-wallpapers.jpg');
+  background-size: fill;
+  background-position: center;
+  z-index: 1; /* Ensures the background image is behind the content */
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  z-index: 2; /* Ensures the overlay is above the background */
+}
+
+.content-container {
+  position: relative;
+  z-index: 3; /* Ensures the content is above the overlay */
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -71,5 +79,7 @@ body, html {
     height: auto;
   }
 
-  
+  .main-content {
+    margin-left: 0;
+  }
 }
