@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;    
+    height: 80vh;    
     position:static;
     flex-direction: column;
   }
@@ -22,15 +22,23 @@
   }
   
   .details-container {
+    font-size: 2rem;
     text-align: center;
+  
   }
   
   .details-container h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-display:initial;
+    text-decoration: underline;
+    margin-top: 15px;
   }
   
   .details-container p {
-    font-size: 1.2rem;
-    line-height: 1.5;
+   font-size:large;
+   margin-bottom: 2em;
+   font-weight: 600;
+  max-width: 800px;
+  
   }
   
