@@ -12,18 +12,21 @@ import TopValidators from './TopValidators';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
+      <div id="root">
         <Sidebar />
         <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/validator" element={<Validator />} />
-            <Route path="/validators/:id" element={<ValidatorDetails />} />
-            <Route path="/top-validators" element={<TopValidators />} />
-           
-          </Routes>
+          <div className="background-image"></div>
+          <div className="blur-overlay"></div>
+          <div className="content-container">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/validator" element={<Validator />} />
+              <Route path="/validators/:id" element={<ValidatorDetails />} />
+              <Route path="/top-validators" element={<TopValidators />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </Router>
