@@ -16,22 +16,26 @@
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #10898d;
+  background-color:transparent;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  margin-top: 100px;
+  color: whitesmoke;
+  margin-top: 50px;
    
 }
 
 h1 {
   text-align: center;
   color: #fbf6f6;
+  text-decoration: underline;
+  font-weight: bold;
 }
-.help-paragraph p{
+.validator-container .paragraph {
   margin-top: 10px;
   max-width: 600px;
-  align-items:center ;  
+  font-size: medium;
+  margin-left: 140px;
+  align-items:center ; 
+  font-weight: 500; 
   text-align: center;
 }
 
@@ -78,14 +82,14 @@ h1 {
   border-radius: 40px;
   transition: all 0.3s;
   cursor: pointer;
-  background: rgb(9, 148, 74);
+  background:#2b2b2d;
   font-size: 1.0em;
   font-weight: 550;
   font-family: 'Montserrat', sans-serif;   
 }
 
 .search-bar button:hover {
-  background: #1657d0;
+  background: #767775;
   color: white;
   font-size: 1.2em;
 }
@@ -107,6 +111,7 @@ h1 {
 .validator-info {
   width: 100%; 
   margin-bottom: 20px; 
+  
 }
 
 .validator-attestations {
@@ -125,22 +130,4 @@ h2 {
   margin: 5px 0;
   font-size: 1.1em;
   line-height: 1.5;
-}
-
-
-.info-button {
-  margin: 10px auto;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1em;
-  display: block;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
-}
-
-.info-button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
