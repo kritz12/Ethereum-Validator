@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
-  const [selected, setSelected] = useState('/');
   const navigate = useNavigate();
+  const location = useLocation();
+  const [selected, setSelected] = useState(location.pathname);
+
+  useEffect(() => {
+    setSelected(location.pathname);
+  }, [location.pathname]);
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSelected(value);
-    navigate(value); 
+    navigate(value);
   };
 
   return (
@@ -25,6 +30,7 @@ function Navbar() {
           />
           <label className="name" htmlFor="welcome">Welcome</label>
         </div>
+       
         <div className="radio">
           <input
             type="radio"
@@ -35,6 +41,7 @@ function Navbar() {
           />
           <label className="name" htmlFor="validator">Validator Search</label>
         </div>
+        
       </div>
     </div>
   );
