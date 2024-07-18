@@ -58,7 +58,7 @@ krithik-project/
 └── README.md
 
 ## Navigate to the project directory:
-cd krithik-project
+cd Ethereum-Validator
 ## Install dependencies:
 npm install
 ## Start the development server:
